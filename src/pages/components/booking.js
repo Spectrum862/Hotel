@@ -1,7 +1,7 @@
 import React,{Fragment,Component,useState} from 'react'
 import theme from '../../theme'
 import { ThemeProvider } from '@material-ui/core/styles'
-import { Container, Typography , Grid, Paper, TextField} from '@material-ui/core/'
+import { Container, Typography , Grid, Paper, TextField, Button} from '@material-ui/core/'
 import DateFnsUtils from '@date-io/date-fns'
 import {MuiPickersUtilsProvider,KeyboardTimePicker,KeyboardDatePicker,} from '@material-ui/pickers'
 
@@ -64,6 +64,7 @@ export default function Booking(){
                     </Grid>
                 </MuiPickersUtilsProvider>
             </Grid>
+            <Button fullWidth color='secondary' variant='contained' className='margintop3'>ค้นหา</Button>
             </ThemeProvider>
         </Fragment>
     )
