@@ -1,0 +1,40 @@
+.padding{
+    padding: 2rem !important
+}
+
+.margintop1{
+    margin-top: 20% !important
+}
+
+.margintop2{
+    margin-top: 5% !important
+}
+
+.margintop3{
+    margin-top: 3% !important
+}
+
+.mainbg{
+    background-image:   linear-gradient( rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5) ), 
+                        url(https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+    background-size: cover;
+    display: flex;
+    height: 70vh;
+}
+
+.textwhite{
+    color: white;
+    
+}
+
+.bg-primary{
+    background-color: #2E7AB3 !important;
+}
+
+.pofix{
+    top: -20px;
+}
+.content{
+    padding: 3rem 0 3rem 0;
+}

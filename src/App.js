@@ -1,20 +1,22 @@
 import React,{Fragment,Component} from 'react'
-import Login  from './components/login'
-
+import Login  from './pages/login'
+import { Route,BrowserRouter  } from 'react-router-dom'
+import Home from './pages/home'
 
 export default class App extends Component{
   
   constructor(props) {
     super(props)
-    this.state = {
+    this.state = { 
     }
   }
 
   render(){
     return (
-      <Fragment>
-        <Login/>
-      </Fragment>
+      <BrowserRouter>
+        <Route exact path="/" component={Home}/>
+        <Route path="/login" component={Login} />
+      </BrowserRouter>
     )
   }
 }
