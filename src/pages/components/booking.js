@@ -64,7 +64,7 @@ export default function Booking(){
                     </Grid>
                 </MuiPickersUtilsProvider>
             </Grid>
-            <Button fullWidth color='secondary' variant='contained' className='margintop3'>ค้นหา</Button>
+            <Button fullWidth color='primary' variant='contained' className='margintop3'>ค้นหา</Button>
             </ThemeProvider>
         </Fragment>
     )

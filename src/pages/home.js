@@ -5,6 +5,7 @@ import { Container, Typography , Grid,Button, Card, CardActionArea,CardActions,C
 import Nav from './components/nav'
 import Booking from './components/booking'
 import Hotel from './components/hotel'
+import Footer from './components/footer'
 export default class Home extends Component{
     render(){
         return(
@@ -33,13 +34,20 @@ export default class Home extends Component{
                 </div>
                 <div className='contentbg' > 
                     <Container className='content'maxWidth="md" >                 
-                        <Grid container spacing={3}>
-                            <Grid item lg={4}>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} lg={4} md={6}>
+                                <Hotel/>
+                            </Grid>
+                            <Grid item xs={12} lg={4} md={6}>
+                                <Hotel/>
+                            </Grid>
+                            <Grid item xs={12} lg={4} md={6}>
                                 <Hotel/>
                             </Grid>
                         </Grid>
                     </Container>
                 </div>
+                <Footer/>
             </ThemeProvider>
         )
     }

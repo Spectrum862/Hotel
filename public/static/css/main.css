@@ -36,7 +36,7 @@
     top: -20px;
 }
 .content{
-    padding: 5vw 0 5vw 0;
+    padding: 5vh 0 5vh 0;
 }
 
 .contentbg:nth-child(even) {
@@ -46,5 +46,14 @@
 .maxwidth{
     width: 100%;
     display: block;
+}
+
+.right{
+    margin-left: auto;
+    display: inline;
+}
+
+.dark{
+    background-color: #1b1b1b;
 }
 

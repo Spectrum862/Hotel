@@ -9,7 +9,7 @@ export default class Nav extends Component{
     render(){
         return(
             <ThemeProvider theme={theme}>
-                <AppBar position="static" color='primary'>
+                <AppBar position="static" color='secondary'>
                     <Toolbar >
 
                     </Toolbar>
