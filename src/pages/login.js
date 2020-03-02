@@ -22,8 +22,9 @@ export default class Login extends Component {
         // if(this.state.password==="") this.plsPass
     }  
 
-    onSummit = () =>{
-        
+    onSubmit = (e) =>{
+        e.preventDefault()
+        console.log('submit')
     }
 
     plsId =()=>{
@@ -43,10 +44,11 @@ export default class Login extends Component {
                 <ThemeProvider theme={theme}>
                     <Paper elevation={0} className='margintop1'>                 
                         <Typography variant='h3' align='center'>Sign in</Typography> 
-                        <form >
+                        
+                        <form  onSubmit={this.onSubmit}>
                             <TextField name='username' label="Email" fullWidth variant="outlined" margin="normal" required onChange={this.onChange}/>
                             <TextField name= 'password'label="Password" fullWidth type='password' variant="outlined" margin="normal" required onChange={this.onChange}/>
-                            <Button className='margintop2' id="submit" variant="contained" color='primary' fullWidth >Sign in</Button>
+                            <Button type='submit'className='margintop2' variant="contained" color='primary' fullWidth >Sign in</Button>
                         </form>
                         <Grid container className="margintop3">
                             <Grid item xs>
