@@ -1,7 +1,7 @@
 import React,{Fragment,Component} from 'react'
 import theme from '../theme'
 import { ThemeProvider } from '@material-ui/core/styles'
-import { Container, Typography , Grid,Button, Card, CardActionArea,CardActions,CardMedia,CardContent} from '@material-ui/core/'
+import { Container, Typography , Grid,Button, Card, CardActionArea,CardActions,CardMedia,CardContent,Grow  } from '@material-ui/core/'
 import Nav from './components/nav'
 import Booking from './components/booking'
 import Hotel from './components/hotel'
@@ -19,12 +19,14 @@ export default class Home extends Component{
                         justify="center"
                         alignItems="center"
                         >
-                            <Container maxWidth="md" className="textwhite">
-                                <Typography variant="h2" align="center" className>WELCOME</Typography>
-                                <Typography variant="subtitle2" align="center">
-                                    เทสข้อความ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                </Typography>
-                            </Container>            
+                            <Grow timeout={1500}in={true}>
+                                <Container maxWidth="md" className="textwhite">
+                                    <Typography variant="h2" align="center" >WELCOME</Typography>
+                                    <Typography variant="subtitle2" align="center">
+                                        เทสข้อความ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                    </Typography>
+                                </Container>    
+                            </Grow >        
                         </Grid>
                 </Container>
                 <div className='contentbg'>

@@ -1,7 +1,7 @@
 import React,{Fragment,Component} from 'react'
 import theme from '../theme'
 import { ThemeProvider } from '@material-ui/core/styles'
-import {Container,Button,TextField,Typography, Link, Paper, Grid} from '@material-ui/core/'
+import {Container,Button,TextField,Typography, Link, Paper, Grid, Divider} from '@material-ui/core/'
 
 
 export default class Login extends Component {
@@ -43,8 +43,9 @@ export default class Login extends Component {
             <Container maxWidth="xs">
                 <ThemeProvider theme={theme}>
                     <Paper elevation={0} className='margintop1'>                 
-                        <Typography variant='h3' align='center'>Sign in</Typography> 
-                        
+                        <Link href='\' underline='none' color='inherit'> <Typography variant='h2' align='center'>HOTELER</Typography></Link>
+                        <Divider></Divider>
+                        <Typography variant='h5' align='center'>Sign in</Typography> 
                         <form  onSubmit={this.onSubmit}>
                             <TextField name='username' label="Email" fullWidth variant="outlined" margin="normal" required onChange={this.onChange}/>
                             <TextField name= 'password'label="Password" fullWidth type='password' variant="outlined" margin="normal" required onChange={this.onChange}/>
