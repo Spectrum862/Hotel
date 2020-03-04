@@ -20,7 +20,7 @@ export default function Booking(){
     return(
         <Fragment>
             <ThemeProvider theme={theme}>
-            <Typography variant="h4" align="center" className>ค้นหาโรงแรม</Typography>
+            <Typography variant="h4" align="center" >ค้นหาโรงแรม</Typography>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TextField name='username' label="สถานที่" fullWidth variant="outlined" margin="normal" required/>

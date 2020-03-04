@@ -2,30 +2,51 @@ import React,{Fragment,Component} from 'react'
 import theme from '../theme'
 import { ThemeProvider } from '@material-ui/core/styles'
 import {Container,Button,TextField,Typography, Link, Paper, Grid, Divider} from '@material-ui/core/'
+import auth from '../firebase/index'
+import { connect } from 'react-redux'
+import { login,logout} from '../reducers/action'
+import { Redirect, Route } from 'react-router-dom'
 
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props)
+        this.session = props.session
         this.state = {
-            username: "",
-            password: ""
+            email: "",
+            password: "",
+            message:""
         }
+        this.dispatch = props.dispatch
     }
     
+
     onChange = e =>{
         const {name,value} = e.target
         this.setState({
             [name]: value
         })
-        // if(this.state.username==="") this.plsId
+        // if(this.state.email==="") this.plsId
         // if(this.state.password==="") this.plsPass
     }  
 
     onSubmit = (e) =>{
         e.preventDefault()
         console.log('submit')
+        auth
+        .signInWithEmailAndPassword(this.state.email,this.state.password)
+        .then(respond=>{
+            this.dispatch(login(respond.user))
+        })
+        .catch(error=>{
+            this.setState({ message:error.message})
+            console.log(this.state.message)
+        })
+
     }
+
+
+
 
     plsId =()=>{
 
@@ -47,7 +68,7 @@ export default class Login extends Component {
                         <Divider></Divider>
                         <Typography variant='h5' align='center'>Sign in</Typography> 
                         <form  onSubmit={this.onSubmit}>
-                            <TextField name='username' label="Email" fullWidth variant="outlined" margin="normal" required onChange={this.onChange}/>
+                            <TextField name='email' label="Email" fullWidth variant="outlined" margin="normal" required onChange={this.onChange}/>
                             <TextField name= 'password'label="Password" fullWidth type='password' variant="outlined" margin="normal" required onChange={this.onChange}/>
                             <Button type='submit'className='margintop2' variant="contained" color='primary' fullWidth >Sign in</Button>
                         </form>
@@ -70,3 +91,12 @@ export default class Login extends Component {
         )
     }
 }
+const mapStateToProps = function(state) {
+    return {
+      message: 'This is message from mapStateToProps',
+      session : state.session
+    }
+}
+
+const AppWithConnect = connect(mapStateToProps)(Login)
+export default AppWithConnect
