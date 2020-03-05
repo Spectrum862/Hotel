@@ -18,6 +18,8 @@ class Login extends Component {
             message:""
         }
         this.dispatch = props.dispatch
+        this.isLogin = props.isLogin
+        if(this.isLogin) props.history.replace('/')
     }
     
 
@@ -94,7 +96,8 @@ class Login extends Component {
 const mapStateToProps = function(state) {
     return {
       message: 'This is message from mapStateToProps',
-      session : state.session
+      session : state.session,
+      isLogin : state.session.isLogin
     }
 }
 

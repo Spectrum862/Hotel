@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 //components
 import Home from './pages/home'
 import Regis from './pages/regis'
+import { CircularProgress } from '@material-ui/core'
 
 
 
@@ -17,25 +18,26 @@ class App extends Component{
   constructor(props) {
     super(props)
     this.state = { 
+      firebaseInit:false,
     }
     this.dispatch = props.dispatch
   }
 
   componentDidMount() {
-    console.log('APP mounted')
     auth.onAuthStateChanged(respond => {
       if (respond) {
         this.dispatch(login(respond.email,respond.displayName))
         console.log('from App logined ' + respond.email+' name: '+respond.displayName)
         console.log(respond)
       }
+      this.setState({firebaseInit:true})
     })
   }
 
   
 
   render(){
-    return (
+    return this.state.firebaseInit !== false ? (
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home}/>
@@ -44,7 +46,7 @@ class App extends Component{
             <Route component={Home}/>
           </Switch>
         </BrowserRouter>
-    )
+    ) :<div id='loader'><CircularProgress/></div>
   }
 }
 

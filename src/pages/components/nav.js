@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 
 
-function Nav ({dispatch,isLogin,email}){
+function Nav ({dispatch,isLogin,name}){
     const classes = useStyles()
     
     const tologout = (e) =>{
@@ -31,7 +31,7 @@ function Nav ({dispatch,isLogin,email}){
     const checkLogin=()=>{
         if(isLogin===true) return(
             <Typography variant='subtitle1'>
-                {email} | 
+                {name} | 
                 <Button color="inherit" onClick={tologout}>Logout</Button>
             </Typography>        
         )
@@ -54,7 +54,8 @@ const mapStateToProps = function(state) {
     return {
       message: 'This is message from mapStateToProps',
       isLogin: state.session.isLogin,
-      email: state.session.user.email
+      email: state.session.user.email,
+      name: state.session.user.name
     }
   }
   
