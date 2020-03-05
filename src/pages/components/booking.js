@@ -21,6 +21,7 @@ export default function Booking(){
         <Fragment>
             <ThemeProvider theme={theme}>
             <Typography variant="h4" align="center" >ค้นหาโรงแรม</Typography>
+            <form onSubmit={}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TextField name='username' label="สถานที่" fullWidth variant="outlined" margin="normal" required/>
@@ -64,7 +65,8 @@ export default function Booking(){
                     </Grid>
                 </MuiPickersUtilsProvider>
             </Grid>
-            <Button fullWidth color='primary' variant='contained' className='margintop3'>ค้นหา</Button>
+            <Button type='submit'fullWidth color='primary' variant='contained' className='margintop3'>ค้นหา</Button>
+            </form>
             </ThemeProvider>
         </Fragment>
     )
