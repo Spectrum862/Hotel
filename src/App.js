@@ -27,8 +27,8 @@ class App extends Component{
     auth.onAuthStateChanged(respond => {
       if (respond) {
         this.dispatch(login(respond.email,respond.displayName))
-        console.log('from App logined ' + respond.email+' name: '+respond.displayName)
-        console.log(respond)
+        // console.log('from App logined ' + respond.email+' name: '+respond.displayName)
+        // console.log(respond)
       }
       this.setState({firebaseInit:true})
     })
