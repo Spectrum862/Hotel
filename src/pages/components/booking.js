@@ -17,11 +17,14 @@ export default function Booking(){
         setSelectedDateout(date);
     };
 
+    const onSubmit=e=>{
+
+    }
     return(
         <Fragment>
             <ThemeProvider theme={theme}>
             <Typography variant="h4" align="center" >ค้นหาโรงแรม</Typography>
-            <form onSubmit={}>
+            <form onSubmit={onSubmit}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TextField name='username' label="สถานที่" fullWidth variant="outlined" margin="normal" required/>
