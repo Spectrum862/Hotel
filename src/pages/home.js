@@ -34,21 +34,7 @@ export default class Home extends Component{
                         <Booking/>
                     </Container >
                 </div>
-                <div className='contentbg' > 
-                    <Container className='content'maxWidth="md" >                 
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} lg={4} md={6}>
-                                <Hotel/>
-                            </Grid>
-                            <Grid item xs={12} lg={4} md={6}>
-                                <Hotel/>
-                            </Grid>
-                            <Grid item xs={12} lg={4} md={6}>
-                                <Hotel/>
-                            </Grid>
-                        </Grid>
-                    </Container>
-                </div>
+ 
                 <Footer/>
             </ThemeProvider>
         )

@@ -4,8 +4,11 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import { Container, Typography , Grid, Paper, TextField, Button} from '@material-ui/core/'
 import DateFnsUtils from '@date-io/date-fns'
 import {MuiPickersUtilsProvider,KeyboardTimePicker,KeyboardDatePicker,} from '@material-ui/pickers'
+import { useHistory } from 'react-router-dom'
 
-export default function Booking(){
+export default function Booking(props){
+    let history = useHistory()
+ 
     const [selectedDatein,setSelectedDatein] = useState(new Date(Date.now()));
     const [selectedDateout,setSelectedDateout] = useState(new Date(Date.now()));
 
@@ -18,7 +21,8 @@ export default function Booking(){
     };
 
     const onSubmit=e=>{
-
+        e.preventDefault()
+        history.replace('/hotel')
     }
     return(
         <Fragment>

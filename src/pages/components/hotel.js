@@ -9,8 +9,10 @@ export default class Hotel extends Component{
         super(props)
         this.state = {
             name:this.props.name,
-            location:"unknown",
-            price:this.props.price
+            location:this.props.location,
+            price:this.props.price,
+            image:this.props.image,
+            id:this.props.id
         }
     }
     
@@ -18,10 +20,10 @@ export default class Hotel extends Component{
         return(
             <ThemeProvider theme={theme}>
                 <Card>
-                    <CardActionArea>
+                    <CardActionArea href={`/movieinfo/${this.state.id}`}>
                         <CardMedia
                         style={{height:300}}
-                        image='https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80'
+                        image={this.state.image}
                         title="Contemplative Reptile"
                         />
                         <CardContent>
