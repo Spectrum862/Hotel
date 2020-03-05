@@ -25,8 +25,8 @@ class App extends Component{
     console.log('APP mounted')
     auth.onAuthStateChanged(respond => {
       if (respond) {
-        this.dispatch(login(respond.email))
-        console.log('from App logined ' + respond.email)
+        this.dispatch(login(respond.email,respond.displayName))
+        console.log('from App logined ' + respond.email+' name: '+respond.displayName)
         console.log(respond)
       }
     })

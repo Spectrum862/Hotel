@@ -2,6 +2,7 @@ const init_state = {
     isLogin:false,
     user:{
         email:"",
+        name:""
     }
 }
 

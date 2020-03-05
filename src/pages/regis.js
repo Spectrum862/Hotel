@@ -2,6 +2,7 @@ import React,{Fragment,Component} from 'react'
 import theme from '../theme'
 import { ThemeProvider } from '@material-ui/core/styles'
 import {Container,Button,TextField,Typography, Link, Paper, Grid,Divider} from '@material-ui/core/'
+import auth from '../firebase/index'
 
 
 export default class Regis extends Component {
@@ -9,7 +10,9 @@ export default class Regis extends Component {
         super(props)
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            confirm:"",
+            name:"",
         }
     }
     
@@ -18,13 +21,16 @@ export default class Regis extends Component {
         this.setState({
             [name]: value
         })
+        console.log(this.state)
         // if(this.state.username==="") this.plsId
         // if(this.state.password==="") this.plsPass
     }  
 
-    onSummit = () =>{
-        
-    }
+    async register() {
+        const {name,email,password} = this.state
+		await auth.createUserWithEmailAndPassword(email, password)
+		auth.currentUser.updateProfile({displayName: name})
+	}
 
     plsId =()=>{
 
@@ -45,10 +51,12 @@ export default class Regis extends Component {
                         <Link href='\' underline='none' color='inherit'> <Typography variant='h2' align='center'>HOTELER</Typography></Link>
                         <Divider></Divider>
                         <Typography variant='h5' align='center'>Sign up</Typography> 
-                        <form >
+                        <form onSubmit={this.register}>
                             <TextField name='username' label="Email" fullWidth variant="outlined" margin="normal" required onChange={this.onChange}/>
                             <TextField name= 'password'label="Password" fullWidth type='password' variant="outlined" margin="normal" required onChange={this.onChange}/>
-                            <Button className='margintop2' id="submit" variant="contained" color='primary' fullWidth >Sign in</Button>
+                            <TextField name= 'confirm'label="Confirm Password" fullWidth type='password' variant="outlined" margin="normal" required onChange={this.onChange}/>
+                            <TextField name='name' label="Name" fullWidth variant="outlined" margin="normal" required onChange={this.onChange}/>
+                            <Button className='margintop2' type="submit" variant="contained" color='primary' fullWidth >Sign in</Button>
                         </form>
                         <Grid container className="margintop3">
                             <Grid item xs>

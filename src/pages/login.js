@@ -36,7 +36,7 @@ class Login extends Component {
         auth
         .signInWithEmailAndPassword(this.state.email,this.state.password)
         .then(respond=>{
-            this.dispatch(login(respond.user))
+            this.props.history.replace('/')
         })
         .catch(error=>{
             this.setState({ message:error.message})

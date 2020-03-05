@@ -31,7 +31,7 @@ function Nav ({dispatch,isLogin,email}){
     const checkLogin=()=>{
         if(isLogin===true) return(
             <Typography variant='subtitle1'>
-                Welcome {email} | 
+                {email} | 
                 <Button color="inherit" onClick={tologout}>Logout</Button>
             </Typography>        
         )
