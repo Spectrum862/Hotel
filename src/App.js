@@ -4,6 +4,7 @@ import { Route,Switch, BrowserRouter  } from 'react-router-dom'
 import auth from './firebase/index'
 import {login} from './reducers/action'
 import { connect } from 'react-redux'
+import Hotellist from './pages/hotellist'
 
 
 //components
@@ -43,6 +44,7 @@ class App extends Component{
             <Route exact path="/" component={Home}/>
             <Route  path="/login" component={Login} />
             <Route  path="/signup" component={Regis} />
+            <Route path="/hotel" component={Hotellist}/>
             <Route component={Home}/>
           </Switch>
         </BrowserRouter>

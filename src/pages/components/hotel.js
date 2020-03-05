@@ -8,9 +8,9 @@ export default class Hotel extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            name:'Untitle',
-            location:'unknown,unknown',
-            price: 0 
+            name:this.props.name,
+            location:"unknown",
+            price:this.props.price
         }
     }
     
