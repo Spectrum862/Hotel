@@ -34,7 +34,7 @@ export default class Homelist extends Component{
 
 
     listHotel=()=>{
-
+        
     }
 
     render(){
